@@ -10,6 +10,14 @@ const app = express();
 // middleware to parse incoming requests with JSON payloads.
 app.use(express.json());
 
+// middleware to allow cross-origin requests. 
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization'); // specify which HTTP headers are allowed to be sent along with CORS to a server.
+  next();
+})
+
 app.use('/feed', feedRoutes);
 
 app.get('/', (req, res) => {
