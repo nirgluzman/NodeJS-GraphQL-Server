@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3000;
 
 const app = express();
 
-// middleware to parse incoming JSON requests and puts the parsed data in req.body
+// middleware to parse incoming requests with JSON payloads.
 app.use(express.json());
 
 app.use('/feed', feedRoutes);

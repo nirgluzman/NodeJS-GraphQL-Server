@@ -2,3 +2,12 @@
 
 ###
 GET {{url}}/feed/posts
+
+###
+POST {{url}}/feed/posts
+Content-Type: application/json
+
+{
+    "title": "My Post",
+    "content": "Bla bla"
+}
