@@ -11,3 +11,11 @@ Content-Type: application/json
     "title": "My Post",
     "content": "Bla bla"
 }
+
+###
+POST {{url}}/graphql
+Content-Type: application/json
+
+{
+    "query": "{hello { views }}"
+}
